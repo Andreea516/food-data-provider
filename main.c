@@ -48,7 +48,6 @@ int main() {
         printf("Please input no of specific foods for food %s:\n", foodTypes[i]);
         scanf("%d", &noOfSpecificTypes[i]);
         getchar();
-
         //read types&prices
         specificTypes[i] = (char**)malloc(noOfSpecificTypes[i] * sizeof(char*));
         prices[i] = (double*)malloc(noOfSpecificTypes[i] * sizeof(double));
@@ -84,8 +83,7 @@ int main() {
     }
 
     //display data
-   // printf("The food data is:\n");
-    fprintf(data, "%d:\n ", noOfFoodTypes);
+    fprintf(data, "%d:\n", noOfFoodTypes);
     for(int i=0; i<noOfFoodTypes; i++)
     {
         fprintf(data,"%s %d: ",foodTypes[i],noOfSpecificTypes[i]);
@@ -93,8 +91,8 @@ int main() {
             fprintf(data, "(%s - %.2lf) ", specificTypes[i][j], prices[i][j]);
         fprintf(data,"\n");
     }
-    //printf("The drinks data is:\n");
-    fprintf(data,"%d:\n ",noOfDrinks);
+
+    fprintf(data,"%d:\n",noOfDrinks);
     for(int i=0; i<noOfDrinks-1; i++)
     {
         fprintf(data,"(%s - %.2f), ",drinks[i],drinkPrices[i]);
